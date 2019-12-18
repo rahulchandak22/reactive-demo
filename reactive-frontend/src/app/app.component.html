@@ -1,0 +1,9 @@
+<h1> Movies List</h1>
+<div class="add-movies-block">
+  <input #newmovie >
+  <button (click) = "addMovie(newmovie.value)">Add</button>
+</div>
+<div *ngFor="let movie of movies">
+  <p>{{movie.title}}</p>
+</div>
+<router-outlet></router-outlet>
