@@ -1,9 +1,17 @@
-<h1> Movies List</h1>
-<div class="add-movies-block">
-  <input #newmovie >
-  <button (click) = "addMovie(newmovie.value)">Add</button>
+
+<div class="container-grid">
+  <h1 class="item-0-grid"> Movies List</h1>
+  <div class="item-1-grid">
+    <input class="enter-movie-input full-width-grid" #newmovie >
+  </div>
+  <div class="item-2-grid">
+    <button class="full-width-grid add-movie-button" (click) = "addMovie(newmovie.value)">Add</button>
+  </div>
+  <div class="item-3-grid">
+    <div class="movie-name-area" *ngFor="let movie of movies">
+      <p>{{movie.title}}</p>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
 </div>
-<div *ngFor="let movie of movies">
-  <p>{{movie.title}}</p>
-</div>
-<router-outlet></router-outlet>
